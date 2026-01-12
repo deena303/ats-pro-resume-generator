@@ -1,17 +1,23 @@
 import { useState } from "react";
 import ResumeForm from "./components/ResumeForm";
 import ResumePreview from "./components/ResumePreview";
+import "./styles/resume.css";
 
 function App() {
   const [resumeData, setResumeData] = useState({});
 
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
-      <ResumeForm
-        resumeData={resumeData}
-        setResumeData={setResumeData}
-      />
-      <ResumePreview resumeData={resumeData} />
+    <div className="container">
+      <div className="form-section">
+        <ResumeForm
+          resumeData={resumeData}
+          setResumeData={setResumeData}
+        />
+      </div>
+
+      <div className="preview-section">
+        <ResumePreview resumeData={resumeData} />
+      </div>
     </div>
   );
 }
