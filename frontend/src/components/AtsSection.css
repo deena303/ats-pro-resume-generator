@@ -1,245 +1,89 @@
-/* ===== AtsSection.css ===== */
-
 .ats-section {
+    padding: 40px;
+    background: var(--bg-main);
+    border-top: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 20px;
-    background: #f1f5f9;
-    border-top: 1.5px solid #e2e8f0;
+    gap: 24px;
 }
 
-/* ── PDF bar ─────────────────────────────────────────────────────────────── */
 .pdf-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #ffffff;
-    border: 1.5px solid #e2e8f0;
+    background: #fff;
+    padding: 16px 24px;
     border-radius: 12px;
-    padding: 12px 20px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.pdf-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.pdf-bar-icon {
-    font-size: 1.3rem;
-}
-
-.pdf-bar-title {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #1e293b;
-}
-
-.pdf-bar-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.pdf-error {
-    font-size: 0.8rem;
-    color: #ef4444;
-}
-
-.pdf-success {
-    font-size: 0.8rem;
-    color: #22c55e;
-    font-weight: 600;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-pdf {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 20px;
-    background: #1e293b;
+    background: #000;
     color: #fff;
     border: none;
+    padding: 10px 24px;
     border-radius: 8px;
-    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.18s, transform 0.12s;
-    font-family: inherit;
 }
 
-.btn-pdf:hover:not(:disabled) {
-    background: #334155;
-    transform: translateY(-1px);
-}
-
-.btn-pdf:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-/* ── ATS panel ───────────────────────────────────────────────────────────── */
 .ats-panel {
-    background: #ffffff;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 24px 28px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.ats-panel-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.ats-panel-icon {
-    font-size: 1.6rem;
-    margin-top: 2px;
-}
-
-.ats-panel-title {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.ats-panel-sub {
-    margin: 3px 0 0;
-    font-size: 0.82rem;
-    color: #64748b;
-}
-
-/* JD textarea */
-.ats-jd-label {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #475569;
-    margin-bottom: 6px;
-}
-
-.ats-jd-textarea {
-    width: 100%;
-    padding: 11px 14px;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 0.875rem;
-    color: #1e293b;
-    background: #f8fafc;
-    resize: vertical;
-    outline: none;
-    font-family: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    box-sizing: border-box;
-}
-
-.ats-jd-textarea:focus {
-    border-color: #6366f1;
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
 }
 
-/* Error */
-.ats-error-msg {
-    font-size: 0.82rem;
-    color: #ef4444;
-    background: #fef2f2;
-    border: 1px solid #fecaca;
-    border-radius: 8px;
-    padding: 8px 12px;
+.ats-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 16px;
 }
 
-/* ATS button */
+.ats-textarea {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ats-textarea:focus {
+    border-color: var(--accent);
+}
+
 .btn-ats {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 28px;
-    background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+    background: var(--accent);
     color: #fff;
     border: none;
+    padding: 12px 32px;
     border-radius: 10px;
-    font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
-    align-self: flex-start;
-    transition: opacity 0.18s, transform 0.12s;
-    font-family: inherit;
-    letter-spacing: 0.2px;
 }
 
-.btn-ats:hover:not(:disabled) {
-    opacity: 0.92;
-    transform: translateY(-1px);
-}
-
-.btn-ats:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
-}
-
-/* Spinner */
-.btn-spinner {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* ── Results ─────────────────────────────────────────────────────────────── */
 .ats-results {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    animation: fadeIn 0.3s ease;
+    gap: 24px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.ats-score-row {
+.result-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 16px 20px;
+    gap: 24px;
 }
 
-/* Score ring */
 .score-ring-wrapper {
     position: relative;
-    width: 96px;
-    height: 96px;
-    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
 }
 
 .score-ring-text {
@@ -248,118 +92,60 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1px;
-}
-
-.score-number {
-    font-size: 1.5rem;
     font-weight: 800;
-    line-height: 1;
+    font-size: 1.2rem;
 }
 
-.score-pct {
-    font-size: 0.85rem;
-    font-weight: 700;
-    align-self: flex-end;
-    margin-bottom: 4px;
-}
-
-.ats-score-label {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.ats-score-label strong {
-    font-size: 1rem;
-    color: #1e293b;
-}
-
-.ats-score-label span {
-    font-size: 0.84rem;
-    color: #64748b;
-}
-
-/* Keyword cards */
-.ats-keywords-grid {
+.kw-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 16px;
 }
 
-.kw-card {
-    border-radius: 10px;
-    padding: 14px 16px;
-    border: 1.5px solid #e2e8f0;
+.kw-box {
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #eee;
 }
 
-.kw-matched {
+.kw-box.matched {
     background: #f0fdf4;
-    border-color: #bbf7d0;
 }
 
-.kw-missing {
-    background: #fff7ed;
-    border-color: #fed7aa;
+.kw-box.missing {
+    background: #fff1f2;
 }
 
-.kw-card-title {
-    margin: 0 0 10px;
-    font-size: 0.8rem;
+.kw-box span {
+    display: block;
+    filter: uppercase;
+    font-size: 0.7rem;
     font-weight: 700;
-    color: #1e293b;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin-bottom: 8px;
+    color: var(--text-muted);
 }
 
-.kw-badge {
-    font-size: 0.72rem;
-    font-weight: 700;
-    background: rgba(0, 0, 0, 0.08);
-    border-radius: 999px;
-    padding: 1px 8px;
-}
-
-.kw-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    max-height: 180px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-}
-
-.kw-list li {
-    font-size: 0.82rem;
-    color: #374151;
-    padding: 3px 6px;
+.kw-box i {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.75rem;
+    background: #fff;
+    padding: 2px 8px;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.7);
+    margin: 2px;
 }
 
-.kw-empty {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    font-style: italic;
-    background: transparent !important;
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
-@media (max-width: 640px) {
-    .ats-keywords-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .ats-panel {
-        padding: 18px 16px;
-    }
-
-    .pdf-bar {
-        flex-direction: column;
-        align-items: flex-start;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }

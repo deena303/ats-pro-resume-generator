@@ -25,7 +25,7 @@ async function generateResumePDF(resumeData) {
 
   // Build contact line
   const contactParts = [email, phone, linkedin, github].filter(Boolean);
-  const contactLine = contactParts.join(" &nbsp;|&nbsp; ");
+  const contactLine = contactParts.join(" &bull; ");
 
   const html = `
     <!DOCTYPE html>
@@ -36,56 +36,58 @@ async function generateResumePDF(resumeData) {
           * { box-sizing: border-box; margin: 0; padding: 0; }
 
           body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            padding: 48px 52px;
-            color: #1a1a2e;
+            font-family: "Georgia", serif;
+            padding: 60px 52px;
+            color: #111827;
             font-size: 13px;
             line-height: 1.6;
+            background: #ffffff;
           }
 
           /* Header */
           .resume-header {
-            border-bottom: 2.5px solid #1e293b;
-            padding-bottom: 14px;
-            margin-bottom: 22px;
+            border-bottom: 2px solid #111827;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
           }
 
           h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #0f172a;
-            margin-bottom: 8px;
+            color: #111827;
+            margin-bottom: 12px;
+            line-height: 1;
           }
 
           .contact {
-            font-size: 11.5px;
-            color: #334155;
+            font-size: 11px;
+            color: #4b5563;
+            font-family: Arial, sans-serif;
           }
 
           /* Section */
-          .section { margin-bottom: 20px; }
+          .section { margin-bottom: 24px; }
 
           h2 {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #1e293b;
-            font-family: "Segoe UI", Arial, sans-serif;
-            margin-bottom: 5px;
+            color: #111827;
+            font-family: Arial, sans-serif;
+            margin-bottom: 8px;
           }
 
           .divider {
-            height: 1.5px;
-            background: #e2e8f0;
-            margin-bottom: 9px;
+            height: 1px;
+            background: #e5e7eb;
+            margin-bottom: 12px;
           }
 
           p {
             font-size: 13px;
             line-height: 1.65;
-            color: #334155;
+            color: #374151;
             white-space: pre-line;
           }
 
@@ -95,23 +97,22 @@ async function generateResumePDF(resumeData) {
             padding: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 4px 18px;
+            gap: 6px 20px;
           }
 
           ul.skills li {
-            font-size: 12.5px;
-            color: #334155;
-            padding-left: 13px;
+            font-size: 13px;
+            color: #374151;
+            padding-left: 12px;
             position: relative;
           }
 
           ul.skills li::before {
-            content: "▸";
+            content: "•";
             position: absolute;
             left: 0;
-            color: #6366f1;
-            font-size: 10px;
-            top: 2px;
+            color: #4f46e5;
+            font-weight: 900;
           }
         </style>
       </head>
@@ -160,7 +161,11 @@ async function generateResumePDF(resumeData) {
     </html>
   `;
 
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: "networkidle0" });
 
